@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use('/', routes);
 
-app.listen(3000, function(){
-	console.log("Listening on 3000");
+var server = app.listen(3000, function () {
+  var port = server.address().port;
+  console.log('Server up and listening on', port);
 });
